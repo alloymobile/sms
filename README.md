@@ -1,3 +1,3 @@
-# sms
+# smsDTO
 
-This is a simple sms sending application
+This is a simple smsDTO sending application

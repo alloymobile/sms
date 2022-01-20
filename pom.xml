@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.alloymobiletech</groupId>
-    <artifactId>sms</artifactId>
+    <artifactId>smsDTO</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sms</name>
-    <description>This is a sms sending application</description>
+    <name>smsDTO</name>
+    <description>This is a smsDTO sending application</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -25,6 +25,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!--Generate open api endpoints-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <!--SMS sending by twillo -->
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>7.34.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
