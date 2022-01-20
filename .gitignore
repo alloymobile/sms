@@ -6,6 +6,7 @@ target/
 
 ### Sensitive Data ###
 **/src/main/resources/
+**/src/main/java/com/alloymobiletech/sms/config/SecurityConstants.java
 
 ### Test Case ###
 **/src/test/
