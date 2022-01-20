@@ -7,6 +7,9 @@ target/
 ### Sensitive Data ###
 **/src/main/resources/
 
+### Test Case ###
+**/src/test/
+
 ### STS ###
 .apt_generated
 .classpath
