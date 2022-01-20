@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Send SMS APIs", description = "The API is used to send sms to any number")
 public class SmsResource {
 
-    SmsService smsService;
+    private final SmsService smsService;
 
     public SmsResource(SmsService smsService) {
         this.smsService = smsService;
