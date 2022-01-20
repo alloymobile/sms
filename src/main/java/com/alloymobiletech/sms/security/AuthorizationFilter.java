@@ -1,6 +1,6 @@
 package com.alloymobiletech.sms.security;
 
-import com.alloymobiletech.sms.config.SecurityConstants;
+import com.alloymobiletech.sms.config.SmsProperties;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.http.HttpHeaders;
@@ -18,17 +18,20 @@ import java.util.ArrayList;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 
-    public AuthorizationFilter(AuthenticationManager authManager) {
+    private final SmsProperties smsProperties;
+
+    public AuthorizationFilter(AuthenticationManager authManager,SmsProperties smsProperties) {
         super(authManager);
+        this.smsProperties = smsProperties;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
                                     FilterChain chain) throws IOException, ServletException {
-        String header = req.getHeader(HttpHeaders.AUTHORIZATION);
+        String header = req.getHeader(this.smsProperties.getHeaderString());
 
-        if (header == null || !header.startsWith("Bearer ")) {
+        if (header == null || !header.startsWith(this.smsProperties.getTokenPrefix())) {
             chain.doFilter(req, res);
             return;
         }
@@ -41,13 +44,13 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
 
     // Reads the JWT from the Authorization header, and then uses JWT to validate the token
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader(HttpHeaders.AUTHORIZATION);
+        String token = request.getHeader(this.smsProperties.getHeaderString());
 
         if (token != null) {
             // parse the token.
-            String user = JWT.require(Algorithm.HMAC512(SecurityConstants.SECRET.getBytes()))
+            String user = JWT.require(Algorithm.HMAC512(this.smsProperties.getSecret().getBytes()))
                     .build()
-                    .verify(token.replace("Bearer ", ""))
+                    .verify(token.replace(this.smsProperties.getTokenPrefix(), ""))
                     .getSubject();
 
             if (user != null) {

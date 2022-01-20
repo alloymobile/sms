@@ -2,7 +2,6 @@ package com.alloymobiletech.sms.config;
 
 import com.alloymobiletech.sms.security.AuthorizationFilter;
 import com.google.common.collect.ImmutableList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -22,6 +21,11 @@ import java.util.Arrays;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    private final SmsProperties smsProperties;
+
+    public SecurityConfiguration(SmsProperties smsProperties) {
+        this.smsProperties = smsProperties;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -32,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/**").permitAll()
                 .and()
-                .addFilter(new AuthorizationFilter(authenticationManager()))
+                .addFilter(new AuthorizationFilter(authenticationManager(),smsProperties))
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
     @Bean

@@ -80,6 +80,36 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>1.12.0</version>
+                <configuration>
+                    <schemaVersion>v2</schemaVersion>
+                    <subscriptionId>611f6415-4438-4fc6-b289-e4fe3a7c541f</subscriptionId>
+                    <resourceGroup>eathousefood-rg</resourceGroup>
+                    <appName>eathousefood-sms-app</appName>
+                    <pricingTier>B1</pricingTier>
+                    <region>canadaeast</region>
+                    <appServicePlanName>eathousefood-app-service-plan</appServicePlanName>
+                    <appServicePlanResourceGroup>eathousefood-rg</appServicePlanResourceGroup>
+                    <runtime>
+                        <os>Linux</os>
+                        <javaVersion>Java 11</javaVersion>
+                        <webContainer>Java SE</webContainer>
+                    </runtime>
+                    <deployment>
+                        <resources>
+                            <resource>
+                                <directory>${project.basedir}/target</directory>
+                                <includes>
+                                    <include>*.jar</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </deployment>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
