@@ -1,8 +1,8 @@
-package com.alloymobiletech.sms.resource;
+package com.alloymobile.sms.resource;
 
-import com.alloymobiletech.sms.model.ResponseDTO;
-import com.alloymobiletech.sms.model.SmsDTO;
-import com.alloymobiletech.sms.service.SmsService;
+import com.alloymobile.sms.service.SmsService;
+import com.alloymobile.sms.model.ResponseDTO;
+import com.alloymobile.sms.model.SmsDTO;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;

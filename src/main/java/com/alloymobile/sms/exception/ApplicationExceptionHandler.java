@@ -1,6 +1,6 @@
-package com.alloymobiletech.sms.exception;
+package com.alloymobile.sms.exception;
 
-import com.alloymobiletech.sms.model.ResponseDTO;
+import com.alloymobile.sms.model.ResponseDTO;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;

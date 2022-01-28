@@ -1,7 +1,7 @@
-package com.alloymobiletech.sms.integration;
+package com.alloymobile.sms.integration;
 
-import com.alloymobiletech.sms.config.SmsProperties;
-import com.alloymobiletech.sms.exception.InternalServerException;
+import com.alloymobile.sms.config.SmsProperties;
+import com.alloymobile.sms.exception.InternalServerException;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;

@@ -1,6 +1,6 @@
-package com.alloymobiletech.sms.mapper;
+package com.alloymobile.sms.mapper;
 
-import com.alloymobiletech.sms.model.ResponseDTO;
+import com.alloymobile.sms.model.ResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

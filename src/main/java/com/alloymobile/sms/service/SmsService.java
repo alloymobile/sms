@@ -1,9 +1,9 @@
-package com.alloymobiletech.sms.service;
+package com.alloymobile.sms.service;
 
-import com.alloymobiletech.sms.integration.TwilloSMSService;
-import com.alloymobiletech.sms.mapper.SmsMapper;
-import com.alloymobiletech.sms.model.ResponseDTO;
-import com.alloymobiletech.sms.model.SmsDTO;
+import com.alloymobile.sms.integration.TwilloSMSService;
+import com.alloymobile.sms.mapper.SmsMapper;
+import com.alloymobile.sms.model.ResponseDTO;
+import com.alloymobile.sms.model.SmsDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

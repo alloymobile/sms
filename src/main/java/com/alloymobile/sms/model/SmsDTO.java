@@ -1,4 +1,4 @@
-package com.alloymobiletech.sms.model;
+package com.alloymobile.sms.model;
 
 import lombok.Data;
 

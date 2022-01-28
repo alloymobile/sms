@@ -1,6 +1,6 @@
-package com.alloymobiletech.sms.config;
+package com.alloymobile.sms.config;
 
-import com.alloymobiletech.sms.security.AuthorizationFilter;
+import com.alloymobile.sms.security.AuthorizationFilter;
 import com.google.common.collect.ImmutableList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

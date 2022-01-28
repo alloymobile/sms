@@ -1,4 +1,4 @@
-package com.alloymobiletech.sms;
+package com.alloymobile.sms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

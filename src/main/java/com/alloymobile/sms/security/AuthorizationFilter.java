@@ -1,9 +1,8 @@
-package com.alloymobiletech.sms.security;
+package com.alloymobile.sms.security;
 
-import com.alloymobiletech.sms.config.SmsProperties;
+import com.alloymobile.sms.config.SmsProperties;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
